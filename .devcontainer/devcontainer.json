@@ -1,0 +1,48 @@
+{
+	"name": "speed-run-base",
+    "dockerFile": "Dockerfile",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "20",
+			"nvmVersion": "latest",
+			"additionalTools": ["pnpm@9.15.1."]
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.11",
+			"installTools": true,
+			"installJupyterlab": false
+		},
+    	"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+	"forwardPorts": [
+		2222,
+		4321
+	],
+	"postCreateCommand": "bash .devcontainer/post-create-setup.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"tamasfe.even-better-toml",
+				"TomRijndorp.find-it-faster",
+				"mhutchie.git-graph",
+				"donjayamanne.githistory",
+				"YoavBls.pretty-ts-errors",
+				"shd101wyy.markdown-preview-enhanced",
+				"EditorConfig.EditorConfig",
+				"ms-python.python"
+			]
+		}
+	}
+}
