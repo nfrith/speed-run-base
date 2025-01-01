@@ -16,7 +16,9 @@ sudo apt update
 sudo apt install -y stripe
 
 # Install global packages
-npm install pnpm@9.15.1 turbo eas-cli --global
+pnpm setup
+source /home/vscode/.zshrc
+pnpm install turbo eas-cli --global
 
 # Print confirmation message
 echo "Post-create setup completed successfully!"
